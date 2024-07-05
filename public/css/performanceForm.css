@@ -1,0 +1,88 @@
+/* .main_form{
+    background-color: rgba(107, 105, 105, 0.705);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 50px;
+    height: 550px !important;
+} */
+font{
+    color: red;
+}
+.form_deatils{
+    font-size: 20px;
+}
+.error_field{
+    color: red !important;
+    font-weight: bold;
+}
+@media only screen and (max-width: 600px) {
+    /* For mobile phones: */
+   .main_form{
+    background-color: rgba(107, 105, 105, 0.705);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    padding: 50px;
+    height: 850px !important;
+ 
+   }
+}
+@media only screen and (min-width: 600px) {
+    .main_form{
+        background-color: rgba(107, 105, 105, 0.705);
+        backdrop-filter: blur(5px);
+        border-radius: 20px;
+        padding: 50px;
+        height: 600px !important;
+    }
+}
+@media (max-width: 600px) {
+    .desktop-image {
+        display: none;
+    }
+
+    .mobile-image {
+        display: block;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 950px;
+    }
+}@media (min-width: 600px) {
+    .desktop-image {
+        display: block !important;
+        
+    }
+
+    .mobile-image {
+        display: none !important;
+        
+    }
+}
+.inputs{
+    background-color: rgba(197, 197, 197, 0.26) !important;
+    color: white !important;
+}
+select option {
+    background: #efefef;
+    color: #000000;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+}
+.responsive_div::-webkit-scrollbar{
+    height: 4px;
+    width: 10px;
+}
+.responsive_div::-webkit-scrollbar-track{
+    background-color: transparent;
+}
+
+.responsive_div::-webkit-scrollbar-thumb{
+    background-color: #bbc2c2ad;
+    border-radius: 10px;
+}
+body {
+    overflow-x: hidden;  /* Hides horizontal scrollbar */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.desktop-image{
+    max-height: 740px;
+}
