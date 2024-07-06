@@ -3,7 +3,7 @@ let element = document.getElementById("download");
 element.addEventListener("click", (e) => {
   e.preventDefault();
   //change the arguments as needed
-  sendDownloadRequest(2, 2024);
+  sendDownloadRequest(6, 2024);
 });
 
 const sendReadRequest = async (month, year) => {
