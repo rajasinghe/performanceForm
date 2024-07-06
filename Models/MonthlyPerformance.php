@@ -35,7 +35,6 @@ trait MonthlyPerformance
     }
 
     /**
-     
      * @param string $year year of the record.
      * @param string $month moth of the record.
      * @return [] result array.
