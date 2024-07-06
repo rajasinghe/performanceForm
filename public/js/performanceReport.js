@@ -1,9 +1,17 @@
-let element = document.getElementById("download");
-
-element.addEventListener("click", (e) => {
+const downloadBtn = document.getElementById("download");
+const getReport = document.getElementById("getReport");
+downloadBtn.addEventListener("click", (e) => {
   e.preventDefault();
   //change the arguments as needed
-  sendDownloadRequest(6, 2024);
+  try {
+    sendDownloadRequest(6, 2024);
+  } catch (error) {}
+});
+
+getReport.addEventListener("click", (e) => {
+  e.preventDefault();
+  //change the arguments as needed
+  sendReadRequest(6, 2024);
 });
 
 const sendReadRequest = async (month, year) => {
@@ -14,7 +22,8 @@ const sendReadRequest = async (month, year) => {
     console.log(data);
     //use the data from here
   } else {
-    alert("error in response");
+    alert("error in reponse");
+    throw new Error("error in reponse");
   }
 };
 
@@ -28,11 +37,12 @@ const sendDownloadRequest = async (month, year) => {
     const a = document.createElement("a");
     a.style.display = "none";
     a.href = url;
-    a.download = "performanceReport.pdf";
+    a.download = `performanceReport(${month}-${year}).pdf`;
     document.body.appendChild(a);
     a.click();
     window.URL.revokeObjectURL(url);
   } else {
+    throw new Error("error in reponse");
   }
   console.log(response);
 };
