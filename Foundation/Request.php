@@ -4,14 +4,14 @@
 class Request
 {
 
-    public $requestBody;
+    private $requestBody;
+    private $requestParams;
     public $contentType;
     public $headers;
     public $arguments;
 
     public function __construct()
     {
-
         $headers = getallheaders();
         if (Router::$requestMethod == 'POST') {
 
@@ -22,6 +22,8 @@ class Request
                     $this->requestBody = $_POST;
                 }
             }
+        } else if (Router::$requestMethod == 'GET') {
+            $this->requestParams = $_GET;
         }
     }
 
@@ -47,5 +49,10 @@ class Request
     public function getRequestBody()
     {
         return $this->requestBody;
+    }
+
+    public function getRequestParams()
+    {
+        return $this->requestParams;
     }
 }

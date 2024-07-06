@@ -22,7 +22,7 @@ let lblnoParticipantOutside = document.querySelector("#NoOfOutsideError");
 let lbltainingManHrs = document.querySelector("#trainingManHrsError");
 let lblTrainingWhether = document.querySelector("#trainingWeatherError");
 let lbltotalAmount = document.querySelector("#totalAmountError");
-
+const performanceForm = document.getElementById("performanceForm");
 let btnSubmit = document.querySelector("#submit");
 
 function validateYear() {
@@ -174,14 +174,19 @@ btnSubmit.addEventListener("click", async (event) => {
       totalAmount: parseFloat(totalAmount.value),
     };
     const jsonData = JSON.stringify(data);
-    console.log(data);
-    console.log(jsonData);
-    let response = await sendData(jsonData);
-    console.log(response);
-    if (response.success) {
-      console.log("operation successfull");
-    } else {
-      console.log("operation unsuccessfull");
+    try {
+      let response = await sendData(jsonData);
+      console.log(response);
+      if (response.success) {
+        console.log("operation successfull");
+        alert("performance reported successfully");
+        performanceForm.reset();
+      } else {
+        console.log("operation unsuccessfull");
+      }
+    } catch (error) {
+      console.log(error);
+      alert(error.message);
     }
   }
 });
@@ -194,7 +199,10 @@ async function sendData(jsonData) {
     },
     body: jsonData,
   });
-  let json = await response.json();
-  //
-  return json;
+  if (response.ok) {
+    let responseObj = await response.json();
+    return responseObj;
+  } else {
+    throw new Error("request failed");
+  }
 }

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Report page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../public/css/report.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div>
+      <div>
+        <center>
+          <h3>PERFORMANCE OF SCHEDULED COURSE REPORT</h3>
+        </center>
+      </div>
+      <div class="mt-5">
+        <div class="d-lg-flex justify-content-around opation_div">
+          <div class="mb-2">
+            <select class="form-select" id="year">
+              <option selected>Select Year</option>
+              <option value="1">One</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+          </div>
+          <div class="mb-2">
+            <select class="form-select" id="month">
+              <option selected>Select Month</option>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">Setember</option>
+              <option value="10">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+          </div>
+          <div>
+            <button class="btn btn-dark">Get Report</button>
+          </div>
+        </div>
+      </div>
+      <div class="pt-4">
+        <div class="table_div overflow-auto">
+          <table border="1" width="100%" style="border-spacing: 0" class="table">
+            <tr>
+              <th colspan="6" rowspan="2">Name of Course</th>
+              <th rowspan="2" colspan="2">Cost per <br />Participant</th>
+              <th colspan="2">Scheduled Date</th>
+              <th colspan="2">No of <br />Participated</th>
+              <th rowspan="2" colspan="2">
+                No of Training<br />
+                Man Hrs
+              </th>
+              <th colspan="2">Whether Training</th>
+              <th rowspan="2" colspan="2">Remarks Total Amounts</th>
+            </tr>
+            <tr>
+              <th>Start</th>
+              <th>End</th>
+              <th>SLPA</th>
+              <th>Outside</th>
+              <th>Completed</th>
+              <th>Ongoing</th>
+            </tr>
+            <tr>
+              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
+              <td colspan="2">xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+            </tr>
+            <tr>
+              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
+              <td colspan="2">xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+            </tr>
+            <tr>
+              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
+              <td colspan="2">xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+            </tr>
+            <tr>
+              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
+              <td colspan="2">xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+            </tr>
+            <tr>
+              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
+              <td colspan="2">xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+              <td>xxxx</td>
+              <td>xxxx</td>
+              <td colspan="2">xxxx</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="d-flex flex-row-reverse pe-5 pt-2">
+        <button class="btn btn-dark" id="download"><i class="bi bi-download"></i></button>
+      </div>
+    </div>
+
+    <script src="../public/js/performanceReport.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

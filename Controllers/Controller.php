@@ -13,14 +13,23 @@ class Controller
         }
     }
 
-    public function sendResponse($response)
+    /**
+     *send the response to the client 
+     *@param mixed $response 
+     *@param int $status Defaults to null
+     *@return void
+     */
+    public function sendResponse($response, $status = null)
     {
+        if ($status != null && $status) {
+            http_response_code($status);
+        }
         echo json_encode($response);
         exit();
     }
     public function view($path, $data = [])
     {
-        extract($data);
-        include "./views/" . $path;
+
+        require "./views/" . $path;
     }
 }

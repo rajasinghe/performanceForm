@@ -6,7 +6,7 @@ trait MonthlyPerformance
         try {
             $conn = DB::getConnection();
             $query = "
-            INSERT INTO Performance (Name_of_Course,Year,Month,Cost_Per_Participant,Scheduled_Start_Date,Scheduled_End_Date,`No_of_participated(SLPA)`,`No_of_participated(Outside)`,No_of_Training_Man_Hrs,Whether_Training,`Remaks/Total_Amount`) values (?,?,?,?,?,?,?,?,?,?,?)";
+            INSERT INTO Performance (Name_of_Course,Year,Month,Cost_Per_Participant,Scheduled_Start_Date,Scheduled_End_Date,`No_of_participated(SLPA)`,`No_of_participated(Outside)`,No_of_Training_Man_Hrs,Whether_Training,`Remarks`) values (?,?,?,?,?,?,?,?,?,?,?)";
             $stmt = $conn->prepare($query);
             $stmt->bindParam(1, $courseName);
             $stmt->bindParam(2, $year);
@@ -34,9 +34,28 @@ trait MonthlyPerformance
     {
     }
 
+    /**
+     
+     * @param string $year year of the record.
+     * @param string $month moth of the record.
+     * @return [] result array.
+     * @throws Exception if any thing goes wrong.
+     */
     function read($year, $month)
     {
         $conn = Db::getConnection();
+        $query = "SELECT * FROM performance WHERE Month=:month AND Year=:year";
+        $stmt = $conn->prepare($query);
+        $stmt->bindParam(':month', $month);
+        $stmt->bindParam(':year', $year);
+        if (!$stmt->execute()) {
+            throw new Exception("unable to execute the query");
+        }
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        if (!$results) {
+            throw new Exception("invalid resultset");
+        }
+        return $results;
     }
 
     function delete()

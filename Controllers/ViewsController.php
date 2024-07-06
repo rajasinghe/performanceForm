@@ -7,4 +7,11 @@ class ViewsController extends Controller
     {
         $this->view('performanceForm.html');
     }
+
+    public function performanceReport()
+    {
+        $this->view('performanceReport.html');
+    }
+
+    
 }

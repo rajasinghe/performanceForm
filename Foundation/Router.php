@@ -161,6 +161,7 @@ class Router
     public static function handleRouteNotFoundException()
     {
         return function ($request) {
+            if(self::$requestMethod == "POST")
             echo "<div>Route not found</div>";
         };
     }

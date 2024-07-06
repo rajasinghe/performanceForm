@@ -1,0 +1,12 @@
+.opation_div{
+    background-color: rgba(220, 220, 220, 0.587);
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 20px;
+}
+.table_div{
+    height: 400px;
+    padding-left: 48px;
+    padding-right: 48px;
+}
