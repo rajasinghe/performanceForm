@@ -15,10 +15,10 @@ getReport.addEventListener("click", (e) => {
 });
 
 const sendReadRequest = async (month, year) => {
-  const endPoint = `http://localhost:3000/performance/reports/download?month=${month}&year=${year}`;
+  const endPoint = `http://localhost:3000/performance/reports/data?year=${year}&month=${month}`;
   const response = await fetch(endPoint);
   if (response.ok) {
-    const data = response.json();
+    const data = await response.json();
     console.log(data);
     //use the data from here
   } else {
@@ -28,7 +28,7 @@ const sendReadRequest = async (month, year) => {
 };
 
 const sendDownloadRequest = async (month, year) => {
-  const endPoint = `http://localhost:3000/performance/reports/download?month=${month}&year=${year}`;
+  const endPoint = `http://localhost:3000/performance/reports/download/${year}/${month}`;
   const response = await fetch(endPoint);
 
   if (response.ok) {

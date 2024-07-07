@@ -41,6 +41,11 @@ class Request
         }
     }
 
+    function getPathParams()
+    {
+        return $this->arguments;
+    }
+
     function storeParametrizedArguments($arguments)
     {
         $this->arguments = $arguments;

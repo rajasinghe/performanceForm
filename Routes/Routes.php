@@ -53,4 +53,7 @@ to download the pdf file in the report page
 eg:-
 http://localhost:3000/performance/reports/download?year=2024&month=6
 */
-Router::get('/performance/reports/download', [PerformanceController::class, 'downloadReport']);
+Router::get('/performance/reports/download/{year}/{month}', [PerformanceController::class, 'downloadReport']);
+
+
+Router::get('/test/{id}', [ViewsController::class, 'test']);

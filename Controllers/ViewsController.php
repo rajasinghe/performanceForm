@@ -13,5 +13,8 @@ class ViewsController extends Controller
         $this->view('performanceReport.html');
     }
 
-    
+    public function test(Request $request, $id)
+    {
+        $this->sendResponse($id);
+    }
 }

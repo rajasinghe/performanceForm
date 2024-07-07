@@ -71,13 +71,10 @@ class PerformanceController extends Controller
         }
     }
 
-    public function downloadReport(Request $request)
+    public function downloadReport(Request $request, $year, $month)
     {
         try {
             $data = $request->getRequestParams();
-
-            $year = $data['year'] ?? null;
-            $month = $data['month'] ?? null;
 
             if ($year == null || $month == null) {
                 $this->sendResponse(["error" => "insufficent data to send the request"], 400);
@@ -85,8 +82,7 @@ class PerformanceController extends Controller
             }
 
             $records = $this->read($year, $month);
-            //$this->sendResponse($records);
-            //echo ($records[0]['Year']);
+
             $html = $this->generatePerformanceReportHTML($records, $year, $month);
 
             $pdf = $this->generatePdfFromHtml($html);
