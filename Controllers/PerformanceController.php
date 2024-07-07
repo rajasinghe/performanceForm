@@ -71,6 +71,18 @@ class PerformanceController extends Controller
         }
     }
 
+
+    public function getYearList(Request $request)
+    {
+        try {
+            $records = $this->getYear();
+            $this->sendResponse($records);
+        } catch (Exception $e) {
+            $this->sendResponse($e->getMessage(), 500);
+        }
+    }
+
+
     public function downloadReport(Request $request, $year, $month)
     {
         try {
