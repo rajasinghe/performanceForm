@@ -88,6 +88,7 @@ class PerformanceController extends Controller
             $pdf = $this->generatePdfFromHtml($html);
             //output the generated pdf to the browser
             $pdf->stream('performance_report.pdf', ['Attachment' => 0]);
+            ob_end_clean();
             exit();
             //$this->view('performanceReport.php', $records);
             //
