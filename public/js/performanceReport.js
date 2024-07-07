@@ -30,6 +30,7 @@ getReport.addEventListener("click", (e) => {
   if(yearCombo.value === "Select Year" || month.value === "Select Month"){
       
   }else{
+    tableBody.innerHTML = "";
     sendReadRequest(month.value, yearCombo.value);
   }
   
