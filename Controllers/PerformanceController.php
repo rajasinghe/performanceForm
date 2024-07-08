@@ -71,6 +71,18 @@ class PerformanceController extends Controller
         }
     }
 
+
+    public function getYearList(Request $request)
+    {
+        try {
+            $records = $this->getYear();
+            $this->sendResponse($records);
+        } catch (Exception $e) {
+            $this->sendResponse($e->getMessage(), 500);
+        }
+    }
+
+
     public function downloadReport(Request $request, $year, $month)
     {
         try {
@@ -87,9 +99,7 @@ class PerformanceController extends Controller
 
             $pdf = $this->generatePdfFromHtml($html);
             //output the generated pdf to the browser
-            ob_end_clean();
             $pdf->stream('performance_report.pdf', ['Attachment' => 0]);
-
             exit();
             //$this->view('performanceReport.php', $records);
             //

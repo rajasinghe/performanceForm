@@ -57,3 +57,5 @@ Router::get('/performance/reports/download/{year}/{month}', [PerformanceControll
 
 
 Router::get('/test/{id}', [ViewsController::class, 'test']);
+
+Router::get('/performance/reports/getYearList', [PerformanceController::class, 'getYearList']);

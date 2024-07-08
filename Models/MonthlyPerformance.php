@@ -60,4 +60,23 @@ trait MonthlyPerformance
     function delete()
     {
     }
+
+    function getYear()
+{
+    $conn = Db::getConnection(); // Assuming this method exists in your Db class
+    $query = "SELECT DISTINCT `Year` FROM performance";
+    $result = $conn->query($query); // Execute the query directly
+
+    if ($result === false) {
+        throw new Exception("Error executing the query: ");
+    }
+
+    $results = $result->fetchAll(PDO::FETCH_ASSOC);
+
+    if (!$results) {
+        throw new Exception("No results found");
+    }
+
+    return $results;
+}
 }

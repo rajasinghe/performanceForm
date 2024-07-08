@@ -1,5 +1,6 @@
 <?php
 require 'vendor/autoload.php';
+
 require_once './Controllers/Controller.php';
 require_once './Foundation/Router.php';
 require_once './Controllers/ViewsController.php';
