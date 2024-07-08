@@ -158,7 +158,6 @@ function validateForm() {
 
 btnSubmit.addEventListener("click", async (event) => {
   event.preventDefault();
-
   if (validateForm()) {
     let data = {
       year: parseInt(year.value),

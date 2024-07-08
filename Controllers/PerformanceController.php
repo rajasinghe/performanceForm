@@ -23,9 +23,7 @@ class PerformanceController extends Controller
             $trainingWhether = $data['TrainingWhether'] ?? null;
             $totalAmount = $data['totalAmount'] ?? null;
 
-
             if ($year === null || $month === null || $courseName === null || $cost === null || $startDate === null || $endDate === null || $noParticipantSLPA === null || $noParticipantOutside === null || $trainingManHrs === null || $trainingWhether === null || $totalAmount === null) {
-
                 $this->sendResponse(["error" => "insufficent data to send the request"], 400);
             }
 
