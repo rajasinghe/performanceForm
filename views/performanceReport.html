@@ -28,10 +28,10 @@
         <div class="d-lg-flex justify-content-around opation_div">
           <div class="mb-2">
             <select class="form-select" id="year">
-              <option selected>Select Year</option>
-              <option value="1">One</option>
-              <option value="2">Two</option>
-              <option value="3">Three</option>
+              <option selected disabled>Select Year</option>
+
+              <!-- JS Data -->
+
             </select>
           </div>
           <div class="mb-2">
@@ -57,83 +57,37 @@
         </div>
       </div>
       <div class="pt-4">
-        <div class="table_div overflow-auto">
+        <div class="table_div overflow-auto" id="tableSec">
           <table border="1" width="100%" style="border-spacing: 0" class="table">
             <tr>
-              <th colspan="6" rowspan="2">Name of Course</th>
-              <th rowspan="2" colspan="2">Cost per <br />Participant</th>
+              <th>Name of Course</th>
+              <th>Cost per <br />Participant</th>
               <th colspan="2">Scheduled Date</th>
               <th colspan="2">No of <br />Participated</th>
-              <th rowspan="2" colspan="2">
+              <th>
                 No of Training<br />
                 Man Hrs
               </th>
-              <th colspan="2">Whether Training</th>
-              <th rowspan="2" colspan="2">Remarks Total Amounts</th>
+              <th>Whether Training</th>
+              <th>Remarks Total Amounts</th>
             </tr>
             <tr>
+              <th></th>
+              <th></th>
               <th>Start</th>
               <th>End</th>
               <th>SLPA</th>
               <th>Outside</th>
-              <th>Completed</th>
-              <th>Ongoing</th>
+              <th></th>
+              <th></th>
+              <th></th>
             </tr>
-            <tr>
-              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
-              <td colspan="2">xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-            </tr>
-            <tr>
-              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
-              <td colspan="2">xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-            </tr>
-            <tr>
-              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
-              <td colspan="2">xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-            </tr>
-            <tr>
-              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
-              <td colspan="2">xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-            </tr>
-            <tr>
-              <td colspan="6">Course on Advanced Ms Office 20XX [Free Levy Int] Friday</td>
-              <td colspan="2">xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-              <td>xxxx</td>
-              <td>xxxx</td>
-              <td colspan="2">xxxx</td>
-            </tr>
+            <tbody id="tableBody">
+              
+              <!-- js Data -->
+
+            </tbody>
+            
           </table>
         </div>
       </div>
