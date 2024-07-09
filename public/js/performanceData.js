@@ -24,7 +24,6 @@ let lblTrainingWhether = document.querySelector("#trainingWeatherError");
 let lbltotalAmount = document.querySelector("#totalAmountError");
 const performanceForm = document.getElementById("performanceForm");
 let btnSubmit = document.querySelector("#submit");
-
 function validateYear() {
   if (year.value === "") {
     lblyear.innerHTML = "This field is required";
@@ -158,7 +157,6 @@ function validateForm() {
 
 btnSubmit.addEventListener("click", async (event) => {
   event.preventDefault();
-
   if (validateForm()) {
     let data = {
       year: parseInt(year.value),
