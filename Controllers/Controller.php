@@ -21,6 +21,7 @@ class Controller
      */
     public function sendResponse($response, $status = null)
     {
+        header('Content-Type: application/json');
         if ($status != null && $status) {
             http_response_code($status);
         }
