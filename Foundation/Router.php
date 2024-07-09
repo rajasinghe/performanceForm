@@ -143,6 +143,7 @@ class Router
     }
     public static function initializeRouter()
     {
+        header("Access-Control-Allow-Origin: *");
         self::initializeRouteStorage();
         require './Routes/Routes.php';
         self::listenToRouteChange();
@@ -161,8 +162,8 @@ class Router
     public static function handleRouteNotFoundException()
     {
         return function ($request) {
-            if(self::$requestMethod == "POST")
-            echo "<div>Route not found</div>";
+            if (self::$requestMethod == "POST")
+                echo "<div>Route not found</div>";
         };
     }
 }
