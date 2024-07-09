@@ -53,7 +53,7 @@ class PerformanceController extends Controller
     public function getRecord(Request $request)
     {
         try {
-
+            $response = ["command" => "getRecords"];
             $data = $request->getRequestParams();
             $year = $data['year'] ?? null;
             $month = $data['month'] ?? null;
@@ -63,7 +63,8 @@ class PerformanceController extends Controller
                 return;
             }
             $records = $this->read($year, $month);
-            $this->sendResponse($records);
+            $response["records"] = $records;
+            $this->sendResponse($response);
         } catch (Exception $e) {
             $this->sendResponse($e->getMessage(), 500);
         }
@@ -93,7 +94,7 @@ class PerformanceController extends Controller
 
             $records = $this->read($year, $month);
 
-            $html = $this->generatePerformanceReportHTML($records, $year, $month);
+            $html = $this->generatePerformanceReportHTML($records, $year, $this->getCalenderMonth($month));
 
             $pdf = $this->generatePdfFromHtml($html);
             //output the generated pdf to the browser
@@ -106,6 +107,37 @@ class PerformanceController extends Controller
         }
     }
 
+    function getCalenderMonth($month)
+    {
+        switch ($month) {
+            case 1:
+                return "January";
+            case 2:
+                return "February";
+            case 3:
+                return "March";
+            case 4:
+                return "April";
+            case 5:
+                return "May";
+            case 6:
+                return "June";
+            case 7:
+                return "July";
+            case 8:
+                return "August";
+            case 9:
+                return "September";
+            case 10:
+                return "October";
+            case 11:
+                return "November";
+            case 12:
+                return "December";
+            default:
+                return "Invalid month";
+        }
+    }
 
     function generatePdfFromHtml($html): Dompdf
     {
@@ -138,7 +170,7 @@ class PerformanceController extends Controller
                 <th colspan="2">No of <br>Participated</th>
                 <th rowspan="2" colspan="2">No of Training<br> Man Hrs</th>
                 <th colspan="2">Whether Training</th>
-                <th rowspan="2" colspan="2">Remarks Total Amounts</th>
+                <th rowspan="2" colspan="2">Remarks / Total Amounts</th>
             </tr>
             <tr>
                 <th>Start</th>
