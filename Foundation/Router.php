@@ -144,6 +144,7 @@ class Router
     public static function initializeRouter()
     {
         header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: *");
         self::initializeRouteStorage();
         require './Routes/Routes.php';
         self::listenToRouteChange();
